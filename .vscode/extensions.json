@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "ue.alphabetical-sorter",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+    ]
+}
