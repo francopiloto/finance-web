@@ -1,0 +1,10 @@
+{
+  "signup": {
+    "title": "Cadastrar",
+    "description": "Crie uma nova conta."
+  },
+  "signin": {
+    "title": "Entrar",
+    "description": "Faça login na sua conta."
+  }
+}
