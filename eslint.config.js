@@ -3,12 +3,17 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
-import eslintPluginImport from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import';
 
 export default tseslint.config(
   { ignores: ['dist'] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended, 'eslint-config-prettier'],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      importPlugin.flatConfigs.recommended,
+      importPlugin.flatConfigs.typescript,
+    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -17,7 +22,6 @@ export default tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      import: eslintPluginImport,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -31,18 +35,27 @@ export default tseslint.config(
           named: true,
           groups: [
             ['builtin'],
-            ['external', 'internal'],
+            ['external'],
+            ['internal'],
             ['parent', 'sibling', 'index'],
             ['object', 'type'],
           ],
           'newlines-between': 'always',
           pathGroups: [
-            { group: 'builtin', pattern: '@react*', position: 'before' },
-            { group: 'external', pattern: '?!src*/**', position: 'before' },
-            { group: 'external', pattern: 'src*/**', position: 'after' },
+            { pattern: 'react{,-*,*/**}', group: 'builtin', position: 'before' },
+            { pattern: '*', group: 'external', position: 'before' },
+            { pattern: '@*/*', group: 'external', position: 'after' },
+            { pattern: '@/**', group: 'internal', position: 'after' },
           ],
+          pathGroupsExcludedImportTypes: ['builtin'],
         },
       ],
+    },
+    settings: {
+      'import/resolver': {
+        typescript: true,
+        node: true,
+      },
     },
   },
 );

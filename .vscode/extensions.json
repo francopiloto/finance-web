@@ -1,7 +1,8 @@
 {
-    "recommendations": [
-        "ue.alphabetical-sorter",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-    ]
+  "recommendations": [
+    "ue.alphabetical-sorter",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss"
+  ]
 }
