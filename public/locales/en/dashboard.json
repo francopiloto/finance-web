@@ -1,0 +1,7 @@
+{
+  "logout": {
+    "button": "Sign out",
+    "success": "You have been signed out successfully.",
+    "error": "Failed to sign out. Please try again."
+  }
+}

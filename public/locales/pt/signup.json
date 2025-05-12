@@ -1,0 +1,50 @@
+{
+  "title": "Cadastrar",
+  "description": "Crie uma nova conta.",
+  "form": {
+    "fields": {
+      "name": "Nome",
+      "email": "E-mail",
+      "password": "Senha",
+      "confirm_password": "Confirmar senha"
+    },
+    "submit": "Criar conta",
+    "errors": {
+      "name": {
+        "required": "O nome é obrigatório",
+        "invalid": "O nome deve ser uma string",
+        "min": "O nome deve ter pelo menos 1 caractere",
+        "max": "O nome deve ter no máximo 255 caracteres"
+      },
+      "email": {
+        "required": "O e-mail é obrigatório",
+        "invalid": "O e-mail deve ser uma string",
+        "format": "O e-mail deve ser válido",
+        "max": "O e-mail deve ter no máximo 255 caracteres"
+      },
+      "password": {
+        "required": "A senha é obrigatória",
+        "invalid": "A senha deve ser uma string",
+        "min": "A senha deve ter pelo menos 6 caracteres",
+        "max": "A senha deve ter no máximo 100 caracteres"
+      },
+      "confirm_password": {
+        "required": "A confirmação da senha é obrigatória",
+        "invalid": "A confirmação deve ser uma string",
+        "min": "A confirmação é muito curta",
+        "match": "As senhas devem coincidir"
+      }
+    },
+    "login_suggestion": "Já tem uma conta?",
+    "login_cta": "Entrar"
+  },
+  "success": {
+    "title": "Conta criada com sucesso!",
+    "description": "Agora você pode entrar com suas novas credenciais.",
+    "cta": "Ir para o login"
+  },
+  "error": {
+    "title": "Algo deu errado",
+    "description": "Não foi possível criar sua conta. Tente novamente."
+  }
+}

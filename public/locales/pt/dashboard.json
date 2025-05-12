@@ -1,0 +1,7 @@
+{
+  "logout": {
+    "button": "Sair",
+    "success": "Você saiu com sucesso.",
+    "error": "Erro ao tentar sair. Tente novamente."
+  }
+}

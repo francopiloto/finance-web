@@ -1,0 +1,34 @@
+{
+  "title": "Entrar na sua conta",
+  "form": {
+    "fields": {
+      "email": "E-mail",
+      "password": "Senha"
+    },
+    "submit": "Entrar",
+    "errors": {
+      "email": {
+        "required": "O e-mail é obrigatório",
+        "invalid": "O e-mail deve ser uma string",
+        "format": "O e-mail deve ser válido",
+        "max": "O e-mail deve ter no máximo 255 caracteres"
+      },
+      "password": {
+        "required": "A senha é obrigatória",
+        "invalid": "A senha deve ser uma string",
+        "min": "A senha deve ter pelo menos 6 caracteres",
+        "max": "A senha deve ter no máximo 100 caracteres"
+      }
+    },
+    "signup_suggestion": "Ainda não tem uma conta?",
+    "signup_cta": "Cadastre-se"
+  },
+  "success": {
+    "title": "Login realizado com sucesso",
+    "description": "Você está logado agora."
+  },
+  "error": {
+    "title": "Erro ao entrar",
+    "description": "Verifique seu e-mail e senha."
+  }
+}

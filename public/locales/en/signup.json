@@ -1,0 +1,50 @@
+{
+  "title": "Sign up",
+  "description": "Create a new account.",
+  "form": {
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password"
+    },
+    "submit": "Create account",
+    "errors": {
+      "name": {
+        "required": "Name is required",
+        "invalid": "Name must be a string",
+        "min": "Name must have at least 1 character",
+        "max": "Name must have at most 255 characters"
+      },
+      "email": {
+        "required": "Email is required",
+        "invalid": "Email must be a string",
+        "format": "Email must be a valid email address",
+        "max": "Email must have at most 255 characters"
+      },
+      "password": {
+        "required": "Password is required",
+        "invalid": "Password must be a string",
+        "min": "Password must have at least 6 characters",
+        "max": "Password must have at most 100 characters"
+      },
+      "confirm_password": {
+        "required": "Password confirmation is required",
+        "invalid": "Password confirmation must be a string",
+        "min": "Password confirmation is too short",
+        "match": "Passwords must match"
+      }
+    },
+    "login_suggestion": "Already have an account?",
+    "login_cta": "Login"
+  },
+  "success": {
+    "title": "Account created successfully",
+    "description": "You can now log in with your new credentials.",
+    "cta": "Go to login"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "We couldn't create your account. Please try again."
+  }
+}

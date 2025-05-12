@@ -1,0 +1,34 @@
+{
+  "title": "Log in to your account",
+  "form": {
+    "fields": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "submit": "Log in",
+    "errors": {
+      "email": {
+        "required": "Email is required",
+        "invalid": "Email must be a string",
+        "format": "Email must be a valid email address",
+        "max": "Email must have at most 255 characters"
+      },
+      "password": {
+        "required": "Password is required",
+        "invalid": "Password must be a string",
+        "min": "Password must have at least 6 characters",
+        "max": "Password must have at most 100 characters"
+      }
+    },
+    "signup_suggestion": "Don't have an account?",
+    "signup_cta": "Sign up"
+  },
+  "success": {
+    "title": "Login successful",
+    "description": "You're now logged in."
+  },
+  "error": {
+    "title": "Login failed",
+    "description": "Please check your email and password."
+  }
+}
