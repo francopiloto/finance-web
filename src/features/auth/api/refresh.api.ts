@@ -1,11 +1,13 @@
 import axios from 'axios';
 
+import { singletonPromise } from '@/lib/utils/singletonPromise';
+
 import { clearTokens, getRefreshToken, setTokens } from '../lib/tokenStorage';
 import { RefreshTokenResult } from '../types/refresh.types';
 
 type ResponseData = { accessToken: string; refreshToken: string };
 
-export async function refreshTokens(): Promise<RefreshTokenResult> {
+async function refreshTokensInternal(): Promise<RefreshTokenResult> {
   try {
     const storedRefreshToken = getRefreshToken();
 
@@ -35,3 +37,5 @@ export async function refreshTokens(): Promise<RefreshTokenResult> {
     return { success: false, error };
   }
 }
+
+export const refreshTokens = singletonPromise(refreshTokensInternal);
