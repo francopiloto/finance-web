@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { toast } from 'sonner';
 
@@ -10,8 +10,7 @@ import { Button } from '@/components/ui';
 import { useSignUp } from '../api/signup.api';
 import { SignUpUserInput, signUpUserSchema } from '../schema/signup.schema';
 
-export const SignupForm = () => {
-  const navigate = useNavigate();
+export const SignupForm = ({ onComplete }: { onComplete: () => void }) => {
   const { t } = useTranslation('signup');
   const { mutate } = useSignUp();
 
@@ -19,15 +18,7 @@ export const SignupForm = () => {
     return new Promise<void>((resolve, reject) => {
       mutate(data, {
         onSuccess: () => {
-          toast.success(t('success.title'), {
-            description: t('success.description'),
-            action: {
-              label: t('success.cta'),
-              onClick: () => navigate('/login'),
-            },
-            duration: Infinity,
-          });
-
+          onComplete();
           resolve();
         },
         onError: () => {

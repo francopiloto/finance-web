@@ -4,7 +4,6 @@ import { useAuth } from '@/features/auth/contexts/AuthContext';
 import { AuthStatus } from '@/features/auth/types/auth-status.enum';
 
 import { LoadingScreen } from './LoadingScreen';
-import { Toaster } from '../ui/Sonner';
 
 export function ProtectedLayout() {
   const { authStatus } = useAuth();
@@ -17,10 +16,5 @@ export function ProtectedLayout() {
     return <Navigate to="/login" replace />;
   }
 
-  return (
-    <>
-      <Toaster />
-      <Outlet />
-    </>
-  );
+  return <Outlet />;
 }
