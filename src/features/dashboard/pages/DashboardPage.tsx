@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { toast } from 'sonner';
 
-import { Button } from '@/components/ui';
+import { Button, Loader } from '@/components/ui';
 import { useSignOut } from '@/features/auth/api/signout.api';
 
 export function DashboardPage() {
@@ -21,10 +21,12 @@ export function DashboardPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center relative">
       <Button onClick={handleLogout} disabled={isPending}>
         {t('logout.button')}
       </Button>
+
+      {isPending && <Loader isOverlay />}
     </div>
   );
 }

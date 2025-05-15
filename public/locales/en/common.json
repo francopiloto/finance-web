@@ -1,0 +1,8 @@
+{
+  "loader": {
+    "render": {
+      "title": "The API is waking up...",
+      "description": "This may take a few seconds and only happens the first time. Thank you for your patience!"
+    }
+  }
+}
