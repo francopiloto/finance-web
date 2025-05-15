@@ -1,0 +1,8 @@
+{
+  "loader": {
+    "render": {
+      "title": "A API está sendo ativada...",
+      "description": "Isso pode levar alguns segundos e só acontece na primeira vez. Agradecemos a sua paciência!"
+    }
+  }
+}
