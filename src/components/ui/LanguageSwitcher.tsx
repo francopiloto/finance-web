@@ -3,24 +3,16 @@ import Flag from 'react-world-flags';
 
 import i18n from '@/i18n';
 
-import { Button, Popover, PopoverContent, PopoverTrigger } from '.';
+import { getLanguage, mapLanguages } from '@/lib/utils/date';
 
-const languages = [
-  { code: 'en', label: 'English', country: 'US' },
-  { code: 'pt', label: 'Português', country: 'BR' },
-];
+import { Button, Popover, PopoverContent, PopoverTrigger } from '.';
 
 export function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const [currentLang, setCurrentLang] = useState(
-    languages.find((lang) => lang.code === i18n.language) || languages[0],
-  );
+  const [currentLang, setCurrentLang] = useState(getLanguage(i18n.language));
 
   useEffect(() => {
-    const handleLanguageChanged = (newLang: string) =>
-      setCurrentLang(languages.find(({ code }) => code === newLang) || languages[0]);
-
+    const handleLanguageChanged = (newLang: string) => setCurrentLang(getLanguage(newLang));
     i18n.on('languageChanged', handleLanguageChanged);
 
     return () => {
@@ -28,9 +20,9 @@ export function LanguageSwitcher() {
     };
   }, []);
 
-  const handleChange = async (code: string) => {
+  const handleChange = (code: string) => {
     setIsOpen(false);
-    await i18n.changeLanguage(code);
+    i18n.changeLanguage(code);
   };
 
   return (
@@ -42,7 +34,7 @@ export function LanguageSwitcher() {
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-40 p-2">
-          {languages.map(({ code, label, country }) => {
+          {mapLanguages(({ code, label, country }) => {
             const isActive = code === i18n.language;
 
             return (
