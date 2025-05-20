@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 import {
   FieldValues,
   FormProvider as RHFFormProvider,
@@ -17,7 +17,7 @@ import { FormContextProvider } from './FormProvider';
 interface FormProps<TInput extends FieldValues> extends Omit<ComponentProps<'form'>, 'onSubmit'> {
   schema: ZodSchema<TInput>;
   onSubmit: SubmitHandler<TInput>;
-  children: React.ReactNode;
+  children: ReactNode;
   options?: Omit<UseFormProps<TInput>, 'resolver'>;
   i18nConfig?: FormTranslationType;
 }
