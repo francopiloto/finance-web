@@ -1,4 +1,11 @@
 {
+  "cta": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  "date": {
+    "today": "Hoje"
+  },
   "loader": {
     "render": {
       "title": "A API está sendo ativada...",
