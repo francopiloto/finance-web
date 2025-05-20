@@ -1,3 +1,5 @@
+import { ButtonHTMLAttributes } from 'react';
+
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { Slot } from '@radix-ui/react-slot';
@@ -14,6 +16,7 @@ const buttonVariants = cva(
         destructive: 'bg-destructive text-white hover:bg-destructive/90',
         ghost: 'bg-transparent hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
+        outline: 'border border-input text-primary hover:bg-accent hover:text-accent-foreground',
       },
       size: {
         default: 'h-10 px-4 py-2',
@@ -30,7 +33,7 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
