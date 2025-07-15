@@ -41,3 +41,4 @@ dist-ssr
 .env.local
 .env.dev
 .env.test
+.env.prod
